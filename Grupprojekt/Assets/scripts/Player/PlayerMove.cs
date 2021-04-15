@@ -29,4 +29,17 @@ public class PlayerMove : MonoBehaviour
 
         rb.velocity = newMovePos;
     }
+
+    public void LockToTruck(Vector3 aDirection, float aSpeed)
+    {
+        float x = aDirection.x * aSpeed;
+        float y = aDirection.y * aSpeed;
+
+        Vector3 deltaPos = rb.velocity;
+        deltaPos.x += x;
+        deltaPos.y += y;
+
+        rb.position += deltaPos * Time.deltaTime;
+        
+    }
 }
