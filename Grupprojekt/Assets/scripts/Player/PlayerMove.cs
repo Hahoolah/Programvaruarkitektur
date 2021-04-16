@@ -8,9 +8,13 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody rb;
     private float jumpForce = 4;
     public float moveSpeed = 6;
+    private AudioSource audioSource;
+    private bool onTruck = false;
+ 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,15 +23,23 @@ public class PlayerMove : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float y = Input.GetAxis("Vertical") * moveSpeed;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.y);
         }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+       
+            Vector3 movePos = transform.right * x + transform.forward * y;
+            Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
 
-        Vector3 movePos = transform.right * x +  transform.forward * y;
-        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
-
-        rb.velocity = newMovePos;
+            rb.velocity = newMovePos;
+        
     }
 
     public void LockToTruck(Vector3 aDirection, float aSpeed)

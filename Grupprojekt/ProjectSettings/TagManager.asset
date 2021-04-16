@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelLogicManager
   - Truck
+  - Road
   layers:
   - Default
   - TransparentFX
