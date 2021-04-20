@@ -9,8 +9,9 @@ public class TruckForwardMovement : MonoBehaviour
     GameObject frontObject;
     Vector3 front;
     LevelLogicManager levelManager;
+    private float acceleration = 1;
     [SerializeField]
-    private float truckSpeed = 5;
+    private float truckSpeed = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,10 @@ public class TruckForwardMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        acceleration += 0.003f;
         front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
         front = front.normalized;
-        rb.MovePosition(transform.position + front * Time.deltaTime * truckSpeed); //move truck using rigidbody.
+        rb.MovePosition(transform.position + front * Time.deltaTime * truckSpeed * acceleration); //move truck using rigidbody.
     }
 
     public Vector3 GetDirection()
