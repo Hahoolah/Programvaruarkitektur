@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody rb;
     private float jumpForce = 4;
+    bool grounded = true;
     public float moveSpeed = 6;
     private AudioSource audioSource;
     private bool onTruck = false;
@@ -23,9 +24,10 @@ public class PlayerMove : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float y = Input.GetAxis("Vertical") * moveSpeed;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.y);
+            grounded = false;
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -53,5 +55,10 @@ public class PlayerMove : MonoBehaviour
 
         rb.position += deltaPos * Time.deltaTime;
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        grounded = true;
     }
 }
