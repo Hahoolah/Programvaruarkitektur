@@ -7,12 +7,16 @@ public class LevelLogicManager : MonoBehaviour
     public GameObject[] myTruckArray;
     GameObject myCollidingTruck;
     public GameObject myPlayer;
+    private AudioSource audio;
+    [SerializeField]
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
     {
         myTruckArray = GameObject.FindGameObjectsWithTag("Truck");
         myPlayer = GameObject.FindGameObjectWithTag("Player");
+        audio = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,5 +37,13 @@ public class LevelLogicManager : MonoBehaviour
     public void PlayerTruckStopCollision()
     {
         myCollidingTruck = null;
+    }
+
+
+    public void GameOver()
+    {
+        audio.clip = deathSound;
+        audio.Play();
+        // TODO: END GAME SCREEN
     }
 }

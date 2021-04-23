@@ -6,11 +6,12 @@ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    private float jumpForce = 4;
-    bool grounded = true;
+    private float jumpForce = 5;
     public float moveSpeed = 6;
     private AudioSource audioSource;
     private bool onTruck = false;
+    [SerializeField]
+    public GameObject levelLogicManager;
  
     void Start()
     {
@@ -24,14 +25,13 @@ public class PlayerMove : MonoBehaviour
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float y = Input.GetAxis("Vertical") * moveSpeed;
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.y);
-            grounded = false;
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            if (!audioSource.isPlaying)
+            if (!audioSource.isPlaying && IsGrounded())
             {
                 audioSource.Play();
             }
@@ -42,6 +42,11 @@ public class PlayerMove : MonoBehaviour
 
             rb.velocity = newMovePos;
         
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, 1);
     }
 
     public void LockToTruck(Vector3 aDirection, float aSpeed)
@@ -57,8 +62,12 @@ public class PlayerMove : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        grounded = true;
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            levelLogicManager.GetComponent<LevelLogicManager>().GameOver();
+        }
     }
+
 }

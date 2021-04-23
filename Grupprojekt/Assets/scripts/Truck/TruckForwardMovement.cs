@@ -9,6 +9,7 @@ public class TruckForwardMovement : MonoBehaviour
     GameObject frontObject;
     Vector3 front;
     LevelLogicManager levelManager;
+    bool grounded = false;
     [SerializeField]
     private float truckSpeed = 3;
     public AudioSource audio1;
@@ -25,9 +26,9 @@ public class TruckForwardMovement : MonoBehaviour
     void FixedUpdate()
     {
         front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
-        front = front.normalized;
+        front = front.normalized;      
         rb.MovePosition(transform.position + front * truckSpeed * Time.deltaTime); //move truck using rigidbody.
-        
+       
     }
 
     public Vector3 GetDirection()
@@ -40,16 +41,31 @@ public class TruckForwardMovement : MonoBehaviour
         return truckSpeed;
     }
 
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, 3);
+    }
+   
+        
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            grounded = true;
+        }
+
         if (collision.gameObject.CompareTag("Player"))
         {
             levelManager.PlayerTruckCollision(this.gameObject);
         }
     }
 
+
+
     private void OnCollisionExit(Collision collision)
-    {
+    {   
+
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             levelManager.PlayerTruckStopCollision();
