@@ -11,6 +11,8 @@ public class TruckForwardMovement : MonoBehaviour
     LevelLogicManager levelManager;
     [SerializeField]
     private float truckSpeed = 3;
+    public AudioSource audio1;
+    public AudioSource audio2;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class TruckForwardMovement : MonoBehaviour
         front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
         front = front.normalized;
         rb.MovePosition(transform.position + front * truckSpeed * Time.deltaTime); //move truck using rigidbody.
+        
     }
 
     public Vector3 GetDirection()
@@ -51,5 +54,11 @@ public class TruckForwardMovement : MonoBehaviour
         {
             levelManager.PlayerTruckStopCollision();
         }
+    }
+
+    public void setPitch(float pitch)
+    {
+        audio1.pitch = pitch;
+        audio2.pitch = pitch;
     }
 }

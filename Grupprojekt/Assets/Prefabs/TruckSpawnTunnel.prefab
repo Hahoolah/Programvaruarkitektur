@@ -214,9 +214,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2737202750851021798}
-  m_LocalRotation: {x: -0, y: 0.7151712, z: -0, w: 0.69894934}
+  m_LocalRotation: {x: 0, y: 0.71516836, z: 0, w: 0.6989522}
   m_LocalPosition: {x: -129.65, y: 32.38, z: 45.91}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43343, y: 0.5896376, z: 0.4712251}
   m_Children:
   - {fileID: 2737202751130098240}
   - {fileID: 2737202750828160106}
@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   truck: {fileID: 0}
-  spawnSeconds: 5
+  effect: {fileID: 181074, guid: f59f6967a2c806540b4a69b74032fe1a, type: 3}
+  spawnSeconds: 3
   timesToSpawn: 5
 --- !u!1 &2737202751130098252
 GameObject:
