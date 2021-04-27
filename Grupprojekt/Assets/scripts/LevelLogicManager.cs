@@ -32,6 +32,7 @@ public class LevelLogicManager : MonoBehaviour
     public void PlayerTruckCollision(GameObject aCollidingTruck)
     {
         myCollidingTruck = aCollidingTruck;
+        myCollidingTruck.GetComponent<TruckRemoval>().SetDestroyTruck(true);
     }
 
     public void PlayerTruckStopCollision()

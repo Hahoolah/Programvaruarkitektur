@@ -38,7 +38,11 @@ public class TimeControl : MonoBehaviour
 
         foreach (var truck in myTruckArray)
         {
-            truck.GetComponent<TruckForwardMovement>().setPitch(0.4f);
+            if (truck != null)
+            {
+                truck.GetComponent<TruckForwardMovement>().setPitch(0.4f);
+            }
+           
         }
 
         player.GetComponent<AudioSource>().pitch = 0.4f;
@@ -52,7 +56,11 @@ public class TimeControl : MonoBehaviour
 
         foreach (var truck in myTruckArray)
         {
-            truck.GetComponent<TruckForwardMovement>().setPitch(1f);
+            if (truck != null)
+            {
+                truck.GetComponent<TruckForwardMovement>().setPitch(1f);
+            }
+            
         }
 
         player.GetComponent<AudioSource>().pitch = 1;

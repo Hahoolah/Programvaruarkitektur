@@ -14,6 +14,7 @@ public class TruckForwardMovement : MonoBehaviour
     private float truckSpeed = 3;
     public AudioSource audio1;
     public AudioSource audio2;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -51,20 +52,20 @@ public class TruckForwardMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Road"))
         {
-            grounded = true;
+            grounded = true;                        
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
             levelManager.PlayerTruckCollision(this.gameObject);
         }
+
     }
 
 
 
     private void OnCollisionExit(Collision collision)
-    {   
-
+    {  
         
         if (collision.gameObject.CompareTag("Player"))
         {
