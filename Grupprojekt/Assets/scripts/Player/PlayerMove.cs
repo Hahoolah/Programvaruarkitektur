@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    private float jumpForce = 5;
-    public float moveSpeed = 6;
+    private float jumpForce = 7;
+    public float moveSpeed = 7;
     private AudioSource audioSource;
     private bool onTruck = false;
     [SerializeField]
