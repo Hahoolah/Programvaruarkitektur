@@ -11,7 +11,7 @@ public class TruckForwardMovement : MonoBehaviour
     LevelLogicManager levelManager;
     bool grounded = false;
     [SerializeField]
-    private float truckSpeed = 3;
+    private float truckSpeed;
     public AudioSource audio1;
     public AudioSource audio2;
     TruckRemoval truckRemoval;
@@ -23,6 +23,7 @@ public class TruckForwardMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();  //find the rigidbody
         levelManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
         truckRemoval = this.GetComponent<TruckRemoval>();
+        truckSpeed = Random.Range(4, 12);
     }
     // Update is called once per frame
     void FixedUpdate()

@@ -8,11 +8,12 @@ public class SpawnTruckDetection : MonoBehaviour
     [SerializeField]
     public GameObject truck;
     public GameObject effect;
+    public LevelLogicManager logicManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        logicManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
     }
 
     // Update is called once per frame

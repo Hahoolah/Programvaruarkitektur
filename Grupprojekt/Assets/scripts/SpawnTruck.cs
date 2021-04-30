@@ -11,11 +11,12 @@ public class SpawnTruck : MonoBehaviour
     public GameObject effect;
     public float spawnSeconds;
     public int timesToSpawn; // if 0 spawn infinite
-    
+    public LevelLogicManager logicManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        logicManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
     }
 
     // Update is called once per frame
