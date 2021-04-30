@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TruckIdleState : TruckFSM
+public class TruckIdleState : INPCState
 {
-    // Start is called before the first frame update
-    void Start()
+    public INPCState DoState(TruckFSM truck)
     {
-        
+        return truck.truckIdleState;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void DoIdle()
     {
-        
+
     }
 }

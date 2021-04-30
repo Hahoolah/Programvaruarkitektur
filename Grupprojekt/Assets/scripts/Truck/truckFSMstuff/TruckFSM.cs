@@ -10,12 +10,14 @@ public interface INPCState
 public class TruckFSM : MonoBehaviour
 {
     // Start is called before the first frame update
+    
     public float timeUntilBoom = 5;
     [SerializeField]
     private INPCState currentState;
-    private TruckIdleState truckIdleState = new TruckIdleState();
-    private TruckBoomState truckBoomState = new TruckBoomState();
-    private TruckDriveState truckDriveState = new TruckDriveState();
+    [HideInInspector]
+    public TruckIdleState truckIdleState = new TruckIdleState();
+    public TruckBoomState truckBoomState = new TruckBoomState();
+    public TruckDriveState truckDriveState = new TruckDriveState();
     private string currentStateName;
     void Start()
     {

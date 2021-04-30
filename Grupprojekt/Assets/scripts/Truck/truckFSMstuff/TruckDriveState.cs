@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TruckDriveState : TruckFSM
+public class TruckDriveState : INPCState
 {
 
     public INPCState DoState(TruckFSM truck)
     {
+        return truck.truckBoomState;
         DoDrive();
+        
     }
 
 

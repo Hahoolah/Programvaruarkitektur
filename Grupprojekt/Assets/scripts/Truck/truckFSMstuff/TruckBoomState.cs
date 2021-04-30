@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TruckBoomState : TruckFSM
+public class TruckBoomState : INPCState
 {
-    // Start is called before the first frame update
-    void Start()
+    public INPCState DoState(TruckFSM truck)
     {
-        
+        return truck.truckBoomState; 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DoBoom()
     {
-        
+
     }
 }
