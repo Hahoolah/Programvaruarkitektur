@@ -18,6 +18,7 @@ public class TruckForwardMovement : MonoBehaviour
     {
         frontObject = gameObject.transform.Find("front").gameObject; // find the front gameObject.
         rb = GetComponent<Rigidbody>();  //find the rigidbody
+
         levelManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
     }
 

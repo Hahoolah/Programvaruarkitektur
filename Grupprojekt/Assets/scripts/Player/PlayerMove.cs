@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    private float jumpForce = 4;
+    public float jumpForce = 4;
     bool grounded = true;
     public float moveSpeed = 6;
     private AudioSource audioSource;
@@ -59,6 +59,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(!other.CompareTag("Player"))
         grounded = true;
     }
 }
