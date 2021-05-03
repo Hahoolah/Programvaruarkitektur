@@ -9,7 +9,7 @@ public class RotateHand : MonoBehaviour
    void Update()
     {
         if (grappling.isGrappling()) return;
-        transform.LookAt(grappling.GetGrapplePoint());
+        transform.LookAt(grappling.GetGrapplePoint()); 
         
     }
 
