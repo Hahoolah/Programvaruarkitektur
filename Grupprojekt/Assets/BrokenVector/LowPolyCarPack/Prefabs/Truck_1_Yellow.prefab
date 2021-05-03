@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3381016}
   - component: {fileID: 2378704}
   - component: {fileID: 1609933354}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3338582}
   - component: {fileID: 2309144}
   - component: {fileID: 397827182}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 426612}
   - component: {fileID: 3359828}
   - component: {fileID: 2355954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Truck 1 Cargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 3391724}
   - component: {fileID: 2342916}
   - component: {fileID: 354802855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 3327024}
   - component: {fileID: 2365576}
   - component: {fileID: 1319277914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 3371676}
   - component: {fileID: 2336884}
   - component: {fileID: 238347501}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 3333220}
   - component: {fileID: 2320820}
   - component: {fileID: 1795319554}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,8 @@ GameObject:
   - component: {fileID: 406903313}
   - component: {fileID: 406903314}
   - component: {fileID: 406903312}
-  m_Layer: 0
+  - component: {fileID: 265154967}
+  m_Layer: 3
   m_Name: Truck_1_Yellow
   m_TagString: Truck
   m_Icon: {fileID: 0}
@@ -789,8 +790,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.08177313, y: 0.035457246, z: 0.028281312}
-  m_Center: {x: -0.0008865762, y: 0, z: -0.00053984765}
+  m_Size: {x: 0.08113386, y: 0.024498839, z: 0.028281309}
+  m_Center: {x: -0.0012061596, y: 0.005479152, z: -0.0005398476}
 --- !u!82 &406903313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -995,7 +996,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82ce53b009c893448503427f4ee3f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  truckSpeed: 3
+  truckSpeed: 10
+  audio1: {fileID: 406903314}
+  audio2: {fileID: 406903313}
+--- !u!114 &265154967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6ba1f71fa64a145a92dbc1e8d89f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1023,7 @@ GameObject:
   - component: {fileID: 3362196}
   - component: {fileID: 2356888}
   - component: {fileID: 2143391997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1120,7 @@ GameObject:
   - component: {fileID: 3315164}
   - component: {fileID: 2374428}
   - component: {fileID: 558294731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelT1-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1199,7 +1214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 555340381}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
