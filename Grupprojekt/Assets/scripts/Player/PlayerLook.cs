@@ -26,9 +26,10 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(x, 0, 0);
         player.transform.localRotation = Quaternion.Euler(0, y, 0);
 
-        if (Input.GetMouseButtonDown(0)) // if left click, camera shake for 0.15f seconds at magnitude 0.4f.
+       /* if (Input.GetMouseButtonDown(0)) // if left click, camera shake for 0.15f seconds at magnitude 0.4f.
         {
             StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
         }
+       */
     }
 }

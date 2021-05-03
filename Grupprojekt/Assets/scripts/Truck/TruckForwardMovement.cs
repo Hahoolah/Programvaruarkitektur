@@ -11,18 +11,20 @@ public class TruckForwardMovement : MonoBehaviour
     LevelLogicManager levelManager;
     bool grounded = false;
     [SerializeField]
-    private float truckSpeed = 3;
+    private float truckSpeed;
     public AudioSource audio1;
     public AudioSource audio2;
-  
+    TruckRemoval truckRemoval;
+
     // Start is called before the first frame update
     void Start()
     {
         frontObject = gameObject.transform.Find("front").gameObject; // find the front gameObject.
         rb = GetComponent<Rigidbody>();  //find the rigidbody
         levelManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
+        truckRemoval = this.GetComponent<TruckRemoval>();
+        truckSpeed = Random.Range(4, 12);
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -52,12 +54,14 @@ public class TruckForwardMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Road"))
         {
-            grounded = true;                        
+            grounded = true;          
+             
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
             levelManager.PlayerTruckCollision(this.gameObject);
+            truckRemoval.DestroyTruck();
         }
 
     }

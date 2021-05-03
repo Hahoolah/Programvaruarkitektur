@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelLogicManager : MonoBehaviour
 {
-    public GameObject[] myTruckArray;
+    public List<GameObject> myTruckList;
     GameObject myCollidingTruck;
     public GameObject myPlayer;
     private AudioSource audio;
@@ -14,7 +14,6 @@ public class LevelLogicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myTruckArray = GameObject.FindGameObjectsWithTag("Truck");
         myPlayer = GameObject.FindGameObjectWithTag("Player");
         audio = this.GetComponent<AudioSource>();
     }
@@ -31,8 +30,7 @@ public class LevelLogicManager : MonoBehaviour
 
     public void PlayerTruckCollision(GameObject aCollidingTruck)
     {
-        myCollidingTruck = aCollidingTruck;
-        myCollidingTruck.GetComponent<TruckRemoval>().SetDestroyTruck(true);
+        myCollidingTruck = aCollidingTruck;     
     }
 
     public void PlayerTruckStopCollision()
@@ -46,5 +44,20 @@ public class LevelLogicManager : MonoBehaviour
         audio.clip = deathSound;
         audio.Play();
         // TODO: END GAME SCREEN
+    }
+
+    public void AddTruckToList(GameObject truck)
+    {
+        myTruckList.Add(truck);
+    }
+
+    public void DeleteTruckFromList(GameObject truck)
+    {
+        myTruckList.Remove(truck);
+    }
+
+    public List<GameObject> GetTruckList()
+    {
+        return myTruckList;
     }
 }

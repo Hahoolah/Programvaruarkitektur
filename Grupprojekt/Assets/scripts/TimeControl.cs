@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeControl : MonoBehaviour
 {
-    public GameObject[] myTruckArray;
+    public List<GameObject> myTruckList;
     AudioSource audio;
     [SerializeField]
     public Camera camera;
@@ -12,8 +12,8 @@ public class TimeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myTruckList = this.GetComponent<LevelLogicManager>().GetTruckList();
         audio = this.GetComponent<AudioSource>();
-        myTruckArray = GameObject.FindGameObjectsWithTag("Truck");
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class TimeControl : MonoBehaviour
         audio.pitch = 0.4f;
         camera.fieldOfView = 90;
 
-        foreach (var truck in myTruckArray)
+        foreach (var truck in myTruckList)
         {
             if (truck != null)
             {
@@ -54,7 +54,7 @@ public class TimeControl : MonoBehaviour
         audio.pitch = 1;
         camera.fieldOfView = 80;
 
-        foreach (var truck in myTruckArray)
+        foreach (var truck in myTruckList)
         {
             if (truck != null)
             {
