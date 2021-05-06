@@ -23,7 +23,7 @@ public class TruckForwardMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();  //find the rigidbody
         levelManager = GameObject.FindGameObjectWithTag("LevelLogicManager").GetComponent<LevelLogicManager>();
         truckRemoval = this.GetComponent<TruckRemoval>();
-        truckSpeed = Random.Range(4, 12);
+        truckSpeed = Random.Range(6, 14);
     }
     // Update is called once per frame
     void FixedUpdate()
