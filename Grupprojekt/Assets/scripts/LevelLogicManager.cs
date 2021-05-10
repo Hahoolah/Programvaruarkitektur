@@ -20,9 +20,8 @@ public class LevelLogicManager : MonoBehaviour
     {
         if (myCollidingTruck != null)
         {
-            myPlayer.GetComponent<PlayerMove>().LockToTruck(myCollidingTruck.GetComponent<TruckForwardMovement>().GetDirection(), myCollidingTruck.GetComponent<TruckForwardMovement>().GetSpeed());
-        }
-       
+            myPlayer.GetComponent<PlayerMove>().LockToTruck(myCollidingTruck.GetComponent<TruckFSM>().GetDirection(), myCollidingTruck.GetComponent<TruckFSM>().GetSpeed());
+        }    
     }
 
     public void PlayerTruckCollision(GameObject aCollidingTruck)

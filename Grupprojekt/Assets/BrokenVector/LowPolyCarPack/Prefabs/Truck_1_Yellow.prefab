@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 406903315}
   - component: {fileID: 406903313}
   - component: {fileID: 406903314}
-  - component: {fileID: 406903312}
+  - component: {fileID: 3463572024057460751}
   m_Layer: 0
   m_Name: Truck_1_Yellow
   m_TagString: Truck
@@ -983,7 +983,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &406903312
+--- !u!114 &3463572024057460751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -992,10 +992,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 154144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82ce53b009c893448503427f4ee3f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da79c19d571e67459cafb18362a1066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeUntilBoom: 5
   truckSpeed: 3
+  audio1: {fileID: 0}
+  audio2: {fileID: 0}
 --- !u!1 &167224
 GameObject:
   m_ObjectHideFlags: 0
