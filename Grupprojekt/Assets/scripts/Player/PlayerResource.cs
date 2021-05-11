@@ -8,7 +8,7 @@ public class PlayerResource : MonoBehaviour
 {
     private float mana;
     private float maxMana = 100;
-    public Slider manaBar;
+    //public Slider manaBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,6 @@ public class PlayerResource : MonoBehaviour
     void Update()
     {
         //mana += 1 * Time.deltaTime;
-        manaBar.value = mana;
+        //manaBar.value = mana;
     }
 }

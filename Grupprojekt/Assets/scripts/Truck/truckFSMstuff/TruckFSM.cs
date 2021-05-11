@@ -54,7 +54,10 @@ public class TruckFSM : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(currentState.ToString());
+        //Debug.Log(currentState.ToString());
+        front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
+        front.z = 0;
+        front = front.normalized;
         currentState = currentState.DoState(this);
         currentStateName = currentState.ToString();
     }
@@ -109,7 +112,7 @@ public class TruckFSM : MonoBehaviour
 
     private void OnDestroy()
     {
-        CameraShake camShake = Camera.main.GetComponent<CameraShake>();
-        camShake.StartCoroutine(camShake.Shake(0.5f, 1));
+        //CameraShake camShake = Camera.main.GetComponent<CameraShake>();
+        //camShake.StartCoroutine(camShake.Shake(0.5f, 1));
     }
 }
