@@ -1,8 +1,9 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ using UnityEngine.Apple;
 
-public class PlayerMove : MonoBehaviour
+ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
@@ -36,6 +37,8 @@ public class PlayerMove : MonoBehaviour
                 audioSource.Play();
             }
         }
+
+        
        
             Vector3 movePos = transform.right * x + transform.forward * y;
             Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);

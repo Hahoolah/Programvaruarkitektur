@@ -7,22 +7,29 @@ public class GrapplingGun : MonoBehaviour
     private LineRenderer lr;
     private Vector3 grapplePoint;
     private SpringJoint joint;
+    private PlayerResource playerResource;
     [SerializeField]
     public float maxDistance;
     public Transform gunTip, camera, player;
     public LayerMask grappable;
+   
 
 
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        playerResource = this.GetComponentInParent<PlayerResource>();
     }
+
 
    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            StartGrapple();
+            if (playerResource.DrainMana(10))
+            {
+                StartGrapple();
+            }
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -45,11 +52,10 @@ public class GrapplingGun : MonoBehaviour
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
 
-
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
-            joint.maxDistance = distanceFromPoint * 0.8f;
-            joint.minDistance = distanceFromPoint * 0.25f;
+            joint.maxDistance = (distanceFromPoint * 0.8f);
+            joint.minDistance = (distanceFromPoint * 0.25f);
 
             joint.spring = 10f;
             joint.damper = 5;
@@ -75,7 +81,7 @@ public class GrapplingGun : MonoBehaviour
         lr.SetPosition(1, grapplePoint);
     }
 
-    public bool isGrappling()
+    public bool IsGrappling()
     {
         return joint != null;
     }

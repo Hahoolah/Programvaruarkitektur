@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerResource : MonoBehaviour
 {
     private float mana;
+    private float maxMana = 100;
+    public Image manaBar;
     // Start is called before the first frame update
     void Start()
     {
-        mana = 100;
+        mana = 50;
     }
 
     public bool DrainMana(float amount)
@@ -22,12 +25,12 @@ public class PlayerResource : MonoBehaviour
         {
             return false;
         }
-
         return false;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         mana += 1 * Time.deltaTime;
+        manaBar.fillAmount = Mathf.Clamp(mana / maxMana, 0, 1f);
     }
 }
