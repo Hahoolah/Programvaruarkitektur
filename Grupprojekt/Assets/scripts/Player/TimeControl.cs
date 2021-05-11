@@ -40,7 +40,7 @@ public class TimeControl : MonoBehaviour
         {
             if (truck != null)
             {
-                truck.GetComponent<TruckForwardMovement>().setPitch(0.4f);
+                truck.GetComponent<TruckFSM>().setPitch(0.4f);
             }
            
         }
@@ -58,7 +58,7 @@ public class TimeControl : MonoBehaviour
         {
             if (truck != null)
             {
-                truck.GetComponent<TruckForwardMovement>().setPitch(1f);
+                truck.GetComponent<TruckFSM>().setPitch(1f);
             }
             
         }

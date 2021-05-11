@@ -13,7 +13,7 @@ public class TruckFSM : MonoBehaviour
     
     public float timeUntilBoom = 5;
     [SerializeField]
-    private INPCState currentState;
+    public INPCState currentState;
     [HideInInspector]
     public TruckIdleState truckIdleState = new TruckIdleState();
     public TruckBoomState truckBoomState = new TruckBoomState();
