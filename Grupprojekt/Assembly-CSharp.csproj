@@ -111,6 +111,10 @@
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\RFX4_RotateAround.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Scripts\RFX4_PhysicsMotion.cs" />
     <Compile Include="Assets\scripts\Truck\TruckRemoval.cs" />
+    <Compile Include="Assets\scripts\Truck\truckFSMstuff\TruckDriveState.cs" />
+    <Compile Include="Assets\scripts\Truck\truckFSMstuff\TruckIdleState.cs" />
+    <Compile Include="Assets\scripts\Truck\truckFSMstuff\TruckFSM.cs" />
+    <Compile Include="Assets\scripts\Truck\truckFSMstuff\TruckBoomState.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Effects\Shaders\Portal\RFX4_PortalSky.shader" />

@@ -38,7 +38,6 @@ using UnityEngine;
             }
         }
 
-        
        
             Vector3 movePos = transform.right * x + transform.forward * y;
             Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
