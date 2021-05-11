@@ -224,6 +224,7 @@ Transform:
   - {fileID: 2737202750301462270}
   - {fileID: 2737202751706804889}
   - {fileID: 2737202751722632829}
+  - {fileID: 1784075798288217402}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 91.314, z: 0}
@@ -243,6 +244,8 @@ MonoBehaviour:
   effect: {fileID: 181074, guid: f59f6967a2c806540b4a69b74032fe1a, type: 3}
   spawnSeconds: 3
   timesToSpawn: 5
+  logicManager: {fileID: 0}
+  truckCongestionDetector: {fileID: 3967935300587952923}
 --- !u!1 &2737202751130098252
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +622,50 @@ BoxCollider:
   m_GameObject: {fileID: 2737202751722632825}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7380953109246879369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784075798288217402}
+  - component: {fileID: 3967935300587952923}
+  m_Layer: 0
+  m_Name: TruckDetector
+  m_TagString: TruckDetector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1784075798288217402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380953109246879369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.12, y: 0.2899971, z: 0.25}
+  m_LocalScale: {x: 15, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 2737202750851021816}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3967935300587952923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380953109246879369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

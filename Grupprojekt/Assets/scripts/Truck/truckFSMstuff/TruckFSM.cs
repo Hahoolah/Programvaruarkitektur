@@ -32,6 +32,7 @@ public class TruckFSM : MonoBehaviour
     public float truckSpeed = 3;
     public AudioSource audio1;
     public AudioSource audio2;
+    public float playerDistance = 0f;
 
     // for handling boomState
     public bool truckIsGrounded;
@@ -54,12 +55,18 @@ public class TruckFSM : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log(currentState.ToString());
+        if (currentState == truckDriveState)
+        {
+            Debug.Log(currentState.ToString());
+        }
         front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
         front.z = 0;
         front = front.normalized;
+
+        truckIdleState.SetPlayerDistance(playerDistance);
         currentState = currentState.DoState(this);
         currentStateName = currentState.ToString();
+
     }
 
     public Vector3 GetDirection()
@@ -70,6 +77,11 @@ public class TruckFSM : MonoBehaviour
     public float GetSpeed()
     {
         return truckSpeed;
+    }
+
+    public void SetPlayerDistance(float aDistance)
+    {
+        playerDistance = aDistance;
     }
 
     private void OnCollisionEnter(Collision collision)

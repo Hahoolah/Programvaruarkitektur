@@ -12,6 +12,8 @@ public class SpawnTruck : MonoBehaviour
     public float spawnSeconds;
     public int timesToSpawn; // if 0 spawn infinite
     public LevelLogicManager logicManager;
+    public BoxCollider truckCongestionDetector;
+    bool clearToSpawnTruck = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,14 @@ public class SpawnTruck : MonoBehaviour
             }
             else
             {
-                spawn();
-                count = 0;
-                spawned++;
+                if (clearToSpawnTruck)
+                {
+                    spawn();
+                    count = 0;
+                    spawned++;
+
+                    clearToSpawnTruck = false;
+                }
             }
         }
         else
@@ -41,6 +48,14 @@ public class SpawnTruck : MonoBehaviour
         }
         
         
+    }
+
+    private void OnTriggerExit(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<BoxCollider>() == truckCongestionDetector)
+        {
+            clearToSpawnTruck = true;
+        }
     }
 
     private void spawn()

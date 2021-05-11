@@ -21,11 +21,14 @@ public class LevelLogicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (GameObject truck in myTruckList)
+        {
+            truck.GetComponent<TruckFSM>().SetPlayerDistance(Vector3.Distance(truck.transform.position, myPlayer.transform.position));
+        }
         if (myCollidingTruck != null)
         {
             myPlayer.GetComponent<PlayerMove>().LockToTruck(myCollidingTruck.GetComponent<TruckFSM>().GetDirection(), myCollidingTruck.GetComponent<TruckFSM>().GetSpeed());
         }
-       
     }
 
     public void PlayerTruckCollision(GameObject aCollidingTruck)

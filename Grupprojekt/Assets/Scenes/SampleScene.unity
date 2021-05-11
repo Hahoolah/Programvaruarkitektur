@@ -2576,7 +2576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b458dccea5e1945a2447b500b9aa1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaBar: {fileID: 265769028}
 --- !u!1001 &575215601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2825,6 +2824,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f2fdb3ded27e84785b2dd1970d6357, type: 3}
+--- !u!65 &666584604 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3967935300587952923, guid: 556ecc07ebb015e429d1f9b7f4cd5f43,
+    type: 3}
+  m_PrefabInstance: {fileID: 806747863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &668378489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3524,16 @@ PrefabInstance:
     - target: {fileID: 2737202750851021817, guid: 556ecc07ebb015e429d1f9b7f4cd5f43,
         type: 3}
       propertyPath: timesToSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737202750851021817, guid: 556ecc07ebb015e429d1f9b7f4cd5f43,
+        type: 3}
+      propertyPath: truckCongestionDetector
+      value: 
+      objectReference: {fileID: 666584604}
+    - target: {fileID: 3967935300587952923, guid: 556ecc07ebb015e429d1f9b7f4cd5f43,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7057,6 +7072,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f2fdb3ded27e84785b2dd1970d6357, type: 3}
+--- !u!1 &1781165685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5253675976157156787, guid: dfd6e5c3fb1af7f49ac4bf9bf3258ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5253675976540354754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1781165688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781165685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0861e45d117464e882d1ed817e2a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1840812683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8895,7 +8928,7 @@ PrefabInstance:
     - target: {fileID: 5253675975968694538, guid: dfd6e5c3fb1af7f49ac4bf9bf3258ce3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.6067
+      value: 17.28
       objectReference: {fileID: 0}
     - target: {fileID: 5253675975968694538, guid: dfd6e5c3fb1af7f49ac4bf9bf3258ce3,
         type: 3}
@@ -8905,7 +8938,7 @@ PrefabInstance:
     - target: {fileID: 5253675975968694538, guid: dfd6e5c3fb1af7f49ac4bf9bf3258ce3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.0692
+      value: 36.16
       objectReference: {fileID: 0}
     - target: {fileID: 5253675975968694538, guid: dfd6e5c3fb1af7f49ac4bf9bf3258ce3,
         type: 3}
