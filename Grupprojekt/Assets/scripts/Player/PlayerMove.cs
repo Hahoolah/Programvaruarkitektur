@@ -10,7 +10,6 @@ using UnityEngine;
     private float jumpForce = 7;
     public float moveSpeed = 7;
     private AudioSource audioSource;
-    private bool onTruck = false;
     [SerializeField]
     public GameObject levelLogicManager;
  

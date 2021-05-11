@@ -37,13 +37,21 @@ public class TruckFSM : MonoBehaviour
     public bool truckIsGrounded;
     public int angleToTriggerBoomState;
     public Material truckMaterial;
+    public bool StartDrive;
 
     //for handling idlestate
     public bool playerTouchingTruck;
     void Start()
     {
-        currentState = truckIdleState;
-
+        if (StartDrive)
+        {
+            currentState = truckDriveState;
+        }
+        else
+        {
+            currentState = truckIdleState;
+        }
+        
         frontObject = gameObject.transform.Find("front").gameObject; // find the front gameObject.
         rb = GetComponent<Rigidbody>();  //find the rigidbody
         truckMaterial = gameObject.transform.Find("Truck 1 Cargo").GetComponent<Renderer>().material;
@@ -54,7 +62,6 @@ public class TruckFSM : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(currentState.ToString());
         currentState = currentState.DoState(this);
         currentStateName = currentState.ToString();
     }

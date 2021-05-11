@@ -2,36 +2,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class PlayerResource : MonoBehaviour
 {
-    private float mana;
-    private float maxMana = 100;
-    public Slider manaBar;
+    private float cooldownHook;
+    private bool hookOnCd = false;
+
+    public Text textHook;
     // Start is called before the first frame update
     void Start()
     {
-        mana = 50;
+        
     }
 
-    public bool DrainMana(float amount)
+    public bool UseHook(float amount)
     {
-        if (amount <= mana)
-        {
-            mana -= amount;
-            return true;
-        }
-        else if (amount > mana)
+        if (hookOnCd)
         {
             return false;
         }
-        return false;
+        else
+        {
+            hookOnCd = true;
+            cooldownHook = amount;
+            return true;
+        }
+        
+       
     }
 
     void Update()
     {
-        //mana += 1 * Time.deltaTime;
-        manaBar.value = mana;
+        if (hookOnCd)
+        {
+            if (cooldownHook > 0)
+            {
+                cooldownHook -= 1 * Time.deltaTime;
+            }
+            else
+            {
+                hookOnCd = false;
+            }
+
+            if (cooldownHook < 0)
+            {
+                cooldownHook = 0;
+            }
+
+            textHook.text = "Hook: " + cooldownHook.ToString("0.00");
+        }
     }
+
+   
 }

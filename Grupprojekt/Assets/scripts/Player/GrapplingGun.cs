@@ -26,7 +26,7 @@ public class GrapplingGun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (playerResource.DrainMana(10))
+            if (playerResource.UseHook(5))
             {
                 StartGrapple();
             }
