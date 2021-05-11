@@ -51,9 +51,9 @@ public class GrapplingGun : MonoBehaviour
             joint.maxDistance = distanceFromPoint * 0.8f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
-            joint.spring = 15f;
-            joint.damper = 5f;
-            joint.massScale = 6.5f;
+            joint.spring = 10f;
+            joint.damper = 5;
+            joint.massScale = 3.5f;
 
             lr.positionCount = 2;
         }
