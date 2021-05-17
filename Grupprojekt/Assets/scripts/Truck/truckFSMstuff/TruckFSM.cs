@@ -13,6 +13,7 @@ public class TruckFSM : MonoBehaviour
 
     public float timeUntilBoom = 5;
     [SerializeField]
+     public bool StartDrive;
     public INPCState currentState;
     [HideInInspector]
     public TruckIdleState truckIdleState = new TruckIdleState();
@@ -37,7 +38,7 @@ public class TruckFSM : MonoBehaviour
     public bool truckIsGrounded;
     public int angleToTriggerBoomState;
     public Material truckMaterial;
-    public bool StartDrive;
+   
 
     //for handling idlestate
     public bool playerTouchingTruck;

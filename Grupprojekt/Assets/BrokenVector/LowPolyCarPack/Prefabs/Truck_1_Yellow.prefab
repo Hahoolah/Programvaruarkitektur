@@ -996,6 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntilBoom: 5
+  StartDrive: 1
   rb: {fileID: 0}
   frontObject: {fileID: 0}
   front: {x: 0, y: 0, z: 0}
@@ -1003,9 +1004,8 @@ MonoBehaviour:
   audio1: {fileID: 406903314}
   audio2: {fileID: 406903313}
   truckIsGrounded: 1
-  angleToTriggerBoomState: 0
+  angleToTriggerBoomState: 60
   truckMaterial: {fileID: 0}
-  StartDrive: 0
   playerTouchingTruck: 0
 --- !u!1 &167224
 GameObject:
