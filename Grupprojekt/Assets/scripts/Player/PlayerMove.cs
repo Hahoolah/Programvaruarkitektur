@@ -7,11 +7,16 @@ public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    private float jumpForce = 7;
+    private float jumpForce = 10;
+    private float dashCooldown = 0.2f;
+    private bool isDashing = false;
     public float moveSpeed = 7;
+    public float dashBoost;
     private AudioSource audioSource;
     [SerializeField]
     public GameObject levelLogicManager;
+    public GameObject effect;
+    public Transform handPos;
 
     void Start()
     {
@@ -24,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float y = Input.GetAxis("Vertical") * moveSpeed;
-
+        dashCooldown -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.y);
@@ -36,7 +41,11 @@ public class PlayerMove : MonoBehaviour
                 audioSource.Play();
             }
         }
-
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0.0f)
+        {
+            dashCooldown = 0.2f;
+            isDashing = true;
+        }
 
         Vector3 movePos = transform.right * x + transform.forward * y;
         Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
@@ -45,9 +54,27 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        if (isDashing)
+            Dashing();
+    }
+
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, 1);
+    }
+
+    private void Dashing()
+    {
+        if (GetComponent<PlayerResource>().UseFlash(4))
+        {
+            Vector3 dashDirection = transform.forward;
+            rb.AddForce(dashDirection * dashBoost, ForceMode.Impulse);
+            Instantiate(effect, handPos);
+            isDashing = false;
+        }
+        
     }
 
     public void LockToTruck(Vector3 aDirection, float aSpeed)
@@ -60,7 +87,6 @@ public class PlayerMove : MonoBehaviour
         deltaPos.y += y;
 
         rb.position += deltaPos * Time.deltaTime;
-        Debug.Log("fml");
 
     }
 

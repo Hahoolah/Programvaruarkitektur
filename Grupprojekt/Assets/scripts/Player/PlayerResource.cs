@@ -11,6 +11,11 @@ public class PlayerResource : MonoBehaviour
     private bool hookOnCd = false;
 
     public Text textHook;
+
+    private float cooldownFlash;
+    private bool flashOnCd = false;
+
+    public Text flashHook;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,22 @@ public class PlayerResource : MonoBehaviour
        
     }
 
+    public bool UseFlash(float amount)
+    {
+        if (flashOnCd)
+        {
+            return false;
+        }
+        else
+        {
+            flashOnCd = true;
+            cooldownFlash = amount;
+            return true;
+        }
+
+
+    }
+
     void Update()
     {
         if (hookOnCd)
@@ -52,6 +73,25 @@ public class PlayerResource : MonoBehaviour
             }
 
             textHook.text = "Hook: " + cooldownHook.ToString("0.00");
+        }
+
+        if (flashOnCd)
+        {
+            if (cooldownFlash > 0)
+            {
+                cooldownFlash -= 1 * Time.deltaTime;
+            }
+            else
+            {
+                flashOnCd = false;
+            }
+
+            if (cooldownFlash < 0)
+            {
+                cooldownFlash = 0;
+            }
+
+            flashHook.text = "Flash: " + cooldownFlash.ToString("0.00");
         }
     }
 
