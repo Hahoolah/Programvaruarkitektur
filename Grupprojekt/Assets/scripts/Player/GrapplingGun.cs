@@ -12,7 +12,7 @@ public class GrapplingGun : MonoBehaviour
     public float maxDistance;
     public Transform gunTip, camera, player;
     public LayerMask grappable;
-   
+
 
 
     void Awake()
@@ -22,7 +22,7 @@ public class GrapplingGun : MonoBehaviour
     }
 
 
-   void Update()
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -33,7 +33,7 @@ public class GrapplingGun : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-           StopGrapple();
+            StopGrapple();
         }
     }
 
@@ -63,7 +63,7 @@ public class GrapplingGun : MonoBehaviour
 
             lr.positionCount = 2;
         }
-            
+
 
     }
 
@@ -75,7 +75,7 @@ public class GrapplingGun : MonoBehaviour
 
     void DrawRope()
     {
-        if (!joint) return; 
+        if (!joint) return;
 
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, grapplePoint);

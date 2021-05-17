@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 406903315}
   - component: {fileID: 406903313}
   - component: {fileID: 406903314}
-  - component: {fileID: 4046122700869223448}
+  - component: {fileID: 5555185682619541187}
   m_Layer: 0
   m_Name: Truck_1_Yellow
   m_TagString: Truck
@@ -983,7 +983,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4046122700869223448
+--- !u!114 &5555185682619541187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -992,21 +992,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 154144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da79c19d571e67459cafb18362a1066, type: 3}
+  m_Script: {fileID: 11500000, guid: 64a85764a62ba9940903424ae245534d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntilBoom: 5
-  explosion: {fileID: 117802, guid: d117ff86aeaeac44b93771311a9a6540, type: 3}
   rb: {fileID: 0}
   frontObject: {fileID: 0}
   front: {x: 0, y: 0, z: 0}
-  truckSpeed: 7
+  truckSpeed: 3
   audio1: {fileID: 406903314}
   audio2: {fileID: 406903313}
-  truckIsGrounded: 0
-  angleToTriggerBoomState: 70
+  truckIsGrounded: 1
+  angleToTriggerBoomState: 0
   truckMaterial: {fileID: 0}
-  StartDrive: 1
+  StartDrive: 0
   playerTouchingTruck: 0
 --- !u!1 &167224
 GameObject:

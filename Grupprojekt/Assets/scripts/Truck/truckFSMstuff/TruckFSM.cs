@@ -10,7 +10,7 @@ public interface INPCState
 public class TruckFSM : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
     public float timeUntilBoom = 5;
     [SerializeField]
     public INPCState currentState;
@@ -22,13 +22,13 @@ public class TruckFSM : MonoBehaviour
 
     //former TRUCKFORWARDMOVEMENT
     [HideInInspector]
-   public Rigidbody rb;
+    public Rigidbody rb;
     [HideInInspector]
     public GameObject frontObject;
     [HideInInspector]
     public Vector3 front;
     LevelLogicManager levelManager;
-    
+
     public float truckSpeed = 3;
     public AudioSource audio1;
     public AudioSource audio2;
@@ -51,7 +51,7 @@ public class TruckFSM : MonoBehaviour
         {
             currentState = truckIdleState;
         }
-        
+
         frontObject = gameObject.transform.Find("front").gameObject; // find the front gameObject.
         rb = GetComponent<Rigidbody>();  //find the rigidbody
         truckMaterial = gameObject.transform.Find("Truck 1 Cargo").GetComponent<Renderer>().material;
@@ -83,7 +83,7 @@ public class TruckFSM : MonoBehaviour
             levelManager.PlayerTruckCollision(this.gameObject);
             playerTouchingTruck = true;
         }
-        if(collision.gameObject.CompareTag("Road"))
+        if (collision.gameObject.CompareTag("Road"))
         {
             truckIsGrounded = true;
         }

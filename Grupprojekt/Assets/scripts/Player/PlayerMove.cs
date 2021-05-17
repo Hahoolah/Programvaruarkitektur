@@ -1,9 +1,9 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using UnityEngine.Apple;
+using UnityEngine.Apple;
 
- public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
@@ -12,7 +12,7 @@ using UnityEngine;
     private AudioSource audioSource;
     [SerializeField]
     public GameObject levelLogicManager;
- 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,12 +37,12 @@ using UnityEngine;
             }
         }
 
-       
-            Vector3 movePos = transform.right * x + transform.forward * y;
-            Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
 
-            rb.velocity = newMovePos;
-        
+        Vector3 movePos = transform.right * x + transform.forward * y;
+        Vector3 newMovePos = new Vector3(movePos.x, rb.velocity.y, movePos.z);
+
+        rb.velocity = newMovePos;
+
     }
 
     private bool IsGrounded()
@@ -60,7 +60,7 @@ using UnityEngine;
         deltaPos.y += y;
 
         rb.position += deltaPos * Time.deltaTime;
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)

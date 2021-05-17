@@ -25,12 +25,12 @@ public class LevelLogicManager : MonoBehaviour
         {
             myPlayer.GetComponent<PlayerMove>().LockToTruck(myCollidingTruck.GetComponent<TruckFSM>().GetDirection(), myCollidingTruck.GetComponent<TruckFSM>().GetSpeed());
         }
-       
+
     }
 
     public void PlayerTruckCollision(GameObject aCollidingTruck)
     {
-        myCollidingTruck = aCollidingTruck;     
+        myCollidingTruck = aCollidingTruck;
     }
 
     public void PlayerTruckStopCollision()
