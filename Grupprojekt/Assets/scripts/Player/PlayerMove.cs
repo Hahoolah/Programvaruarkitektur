@@ -60,6 +60,7 @@ public class PlayerMove : MonoBehaviour
         deltaPos.y += y;
 
         rb.position += deltaPos * Time.deltaTime;
+        Debug.Log("fml");
 
     }
 
