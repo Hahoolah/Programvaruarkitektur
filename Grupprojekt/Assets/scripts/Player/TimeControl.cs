@@ -12,8 +12,8 @@ public class TimeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myTruckList = this.GetComponent<LevelLogicManager>().GetTruckList();
-        audio = this.GetComponent<AudioSource>();
+        myTruckList = gameObject.GetComponent<LevelLogicManager>().GetTruckList();
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

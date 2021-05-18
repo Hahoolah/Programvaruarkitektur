@@ -613,7 +613,7 @@ PrefabInstance:
         type: 3}
       propertyPath: logicManager
       value: 
-      objectReference: {fileID: 1148609462}
+      objectReference: {fileID: 0}
     - target: {fileID: 6406356991065899073, guid: cce32d8244de06c4b861282948236f66,
         type: 3}
       propertyPath: spawnSeconds
@@ -966,7 +966,7 @@ PrefabInstance:
         type: 3}
       propertyPath: logicManager
       value: 
-      objectReference: {fileID: 1148609462}
+      objectReference: {fileID: 0}
     - target: {fileID: 6406356991065899073, guid: cce32d8244de06c4b861282948236f66,
         type: 3}
       propertyPath: spawnSeconds
@@ -3600,10 +3600,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148609459}
-  - component: {fileID: 1148609458}
   - component: {fileID: 1148609460}
   - component: {fileID: 1148609461}
-  - component: {fileID: 1148609462}
+  - component: {fileID: 1148609458}
   m_Layer: 0
   m_Name: LevelLogicManager
   m_TagString: LevelLogicManager
@@ -3620,9 +3619,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148609457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85b7531b8d4ab8641ae7791a24cb3378, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e69f59f2caa1644eb1a3e7f526e92f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTruckList: []
+  myPlayer: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!4 &1148609459
 Transform:
   m_ObjectHideFlags: 0
@@ -3644,7 +3646,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148609457}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d7500656c4306e54aa1a086e7252a00e, type: 3}
@@ -3750,21 +3752,6 @@ MonoBehaviour:
   - {fileID: 750634309}
   camera: {fileID: 963194227}
   player: {fileID: 573495747}
---- !u!114 &1148609462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148609457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c72fc0a5ce55248854de64165682e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTruckList: []
-  myPlayer: {fileID: 573495747}
-  deathSound: {fileID: 8300000, guid: 72d10f668fa07fb42859862cda854236, type: 3}
 --- !u!1001 &1157890984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5238,7 +5225,7 @@ PrefabInstance:
         type: 3}
       propertyPath: logicManager
       value: 
-      objectReference: {fileID: 1148609462}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556ecc07ebb015e429d1f9b7f4cd5f43, type: 3}
 --- !u!1001 &1558539816

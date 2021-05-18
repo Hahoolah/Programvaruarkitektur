@@ -63,6 +63,10 @@ public class TruckFSM : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
+        front.z = 0;
+        front = front.normalized;
+
         currentState = currentState.DoState(this);
         currentStateName = currentState.ToString();
     }
