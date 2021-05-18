@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelLogicManager : MonoBehaviour
 {
@@ -43,12 +44,22 @@ public class LevelLogicManager : MonoBehaviour
     {
         audio.clip = deathSound;
         audio.Play();
-        // TODO: END GAME SCREEN
+        SceneManager.LoadScene("EndMenu");
+    }
+
+    public void Finish(string map)
+    {
+        SceneManager.LoadScene(map);
     }
 
     public void AddTruckToList(GameObject truck)
     {
         myTruckList.Add(truck);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public void DeleteTruckFromList(GameObject truck)

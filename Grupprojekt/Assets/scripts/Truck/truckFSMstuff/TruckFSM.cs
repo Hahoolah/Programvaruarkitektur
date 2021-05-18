@@ -65,6 +65,10 @@ public class TruckFSM : MonoBehaviour
     {
         currentState = currentState.DoState(this);
         currentStateName = currentState.ToString();
+
+        front = frontObject.transform.position - gameObject.transform.position; //calculate what is forward using the front gameobject.
+        front.z = 0;
+        front = front.normalized;
     }
 
     public Vector3 GetDirection()
@@ -117,7 +121,11 @@ public class TruckFSM : MonoBehaviour
 
     private void OnDestroy()
     {
-        CameraShake camShake = Camera.main.GetComponent<CameraShake>();
-        camShake.StartCoroutine(camShake.Shake(0.5f, 1));
+        if (Camera.main != null)
+        {
+            CameraShake camShake = Camera.main.GetComponent<CameraShake>();
+            camShake.StartCoroutine(camShake.Shake(0.5f, 1));
+        }
+       
     }
 }

@@ -1,0 +1,32 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Message : MonoBehaviour
+{
+    public Text messageText;
+    public String messageString;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void SetMessage()
+    {
+        messageText.text = messageString;
+    }
+
+    public void ClearMessage()
+    {
+        messageText.text = "";
+    }
+}

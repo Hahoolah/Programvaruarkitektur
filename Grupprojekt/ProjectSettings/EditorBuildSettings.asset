@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 0fd0995d2e48f4a0ebe1eaa374baffed
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/TutorialMap.unity
+    guid: 4d5cd60735208fd4480a59f720405fc2
+  - enabled: 1
+    path: Assets/Scenes/BridgeMap.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/EndMenu.unity

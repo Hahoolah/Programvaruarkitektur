@@ -42,11 +42,15 @@ public class SpawnTruckDetection : MonoBehaviour
             }
         }
 
-        if (Vector3.Distance(gameObject.transform.position, playerTransform.position) > 2000)
+        if (Vector3.Distance(gameObject.transform.position, playerTransform.position) > 3000)
         {
             startSpawning = false;
         }
-        
+        else
+        {
+            startSpawning = true;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

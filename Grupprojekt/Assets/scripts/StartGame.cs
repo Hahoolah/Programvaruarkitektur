@@ -6,18 +6,13 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public Button button;
-    public void LaunchGame()
+   
+    public static void LaunchGame()
     {
         SceneManager.LoadScene(1);
     }
 
-   void Start()
-    {
-        button.onClick.AddListener(TaskOnClick);
-    }
-
-    private void TaskOnClick()
+   public static void TaskOnClick()
     {
         LaunchGame();
     }

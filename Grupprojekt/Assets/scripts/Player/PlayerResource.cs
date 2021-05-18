@@ -15,7 +15,7 @@ public class PlayerResource : MonoBehaviour
     private float cooldownFlash;
     private bool flashOnCd = false;
 
-    public Text flashHook;
+    public Text flashText;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +91,7 @@ public class PlayerResource : MonoBehaviour
                 cooldownFlash = 0;
             }
 
-            flashHook.text = "Flash: " + cooldownFlash.ToString("0.00");
+            flashText.text = "Flash: " + cooldownFlash.ToString("0.00");
         }
     }
 
